@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: yeaktonghan-spring-maven-war
+spec:
+  destination:
+    name: ''
+    namespace: yeaktonghan
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: app
+    repoURL: 'https://github.com/KSGA-Autopilot/yeaktonghan-spring-maven-war-cd'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+project: default
+source:
+  repoURL: 'https://github.com/KSGA-Autopilot/yeaktonghan-spring-maven-war-cd'
+  path: app
+  targetRevision: HEAD
+destination:
+  server: 'https://kubernetes.default.svc'
+  namespace: yeaktonghan
+syncPolicy:
+  automated:
+    prune: true
+    selfHeal: true
