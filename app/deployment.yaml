@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: yeaktonghan-spring-maven-war
-          image: kshrdautopilot/yeaktonghan-spring-maven-war
+          image: kshrdautopilot/yeaktonghan-spring-maven-war:2023-11-30-18-51-22
           ports:
             - containerPort: 8888
