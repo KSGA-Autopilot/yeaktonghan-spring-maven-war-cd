@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: yeaktonghan-spring-maven-war-deployment
+  labels:
+    app: yeaktonghan-spring-maven-war
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: yeaktonghan-spring-maven-war
+  template:
+    metadata:
+      labels:
+        app: yeaktonghan-spring-maven-war
+    spec:
+      containers:
+        - name: yeaktonghan-spring-maven-war
+          image: kshrdautopilot/yeaktonghan-spring-maven-war
+          ports:
+            - containerPort: 8888
